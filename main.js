@@ -1,5 +1,14 @@
 const path = require('path')
-const { Router } = require(path.join(process.argv[1], 'node_modules', 'express').replace('index',''));
+
+// Get the directory of the script file
+const scriptDir = path.dirname(process.argv[1]);
+
+// Construct the path to the 'express' module in the 'node_modules' folder
+const expressPath = path.join(scriptDir, 'node_modules', 'express');
+
+// Require the 'express' module from that path
+const { Router } = require(expressPath);
+
 const router = Router();
 
 
